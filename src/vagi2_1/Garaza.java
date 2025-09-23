@@ -106,7 +106,7 @@ public class Garaza {
     	
         panel.add(Box.createVerticalStrut(50));
     	
-    	JLabel teksts = new JLabel("<html>Gustavam Lācim<br>Emīls Smirnovs<br>ChatGPT<br>Gemini<br>Disnep</html>");
+    	JLabel teksts = new JLabel("<html>Gustavam Lācim<br>Emīls Smirnovs<br>Intaram Voitkevičam<br>ChatGPT<br>Gemini<br>Disnep</html>");
     	teksts.setFont(new Font("Dialog", Font.BOLD, 25));
     	teksts.setForeground(Color.white);
     	panel.add(teksts);
