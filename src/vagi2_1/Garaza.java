@@ -274,8 +274,12 @@ public class Garaza {
         		}catch(NumberFormatException e) {
         			JOptionPane.showMessageDialog(null, e);	
         		}
-        		if(masina.pamazinat(atrums))
+        		if(atrums < 0) {
+        			JOptionPane.showMessageDialog(null, "Nebūs", "Avārija", JOptionPane.ERROR_MESSAGE);
+        			System.exit(0);
+        		}else if(masina.pamazinat(atrums)) {
         			izv = "Noparkoties";	
+        		}
         		break;
         		
         	case "Noparkoties":
@@ -361,7 +365,12 @@ public class Garaza {
         JButton pPateiciba = JBuilders.pSakumaMenu("  Pateicibas      ");
         pPateiciba.addActionListener(_ -> pateicibas());
         poguPanels.add(pPateiciba);
-
+        
+        poguPanels.add(Box.createVerticalStrut(300));
+        
+        JLabel rs = new JLabel(" RS Industrijas©");
+        poguPanels.add(rs, BorderLayout.SOUTH);
+        
         contentPanel = new JPanel(new BorderLayout());
         contentPanel.setBackground(new Color(50, 50, 50));
         contentPanel.add(bilde, BorderLayout.CENTER);
