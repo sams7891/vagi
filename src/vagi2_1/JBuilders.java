@@ -7,7 +7,6 @@ import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.File;
-
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
@@ -100,7 +99,7 @@ public class JBuilders {
                 }
 
                 startTime = System.currentTimeMillis();
-                timer = new Timer(duration / steps, _ -> {
+                timer = new Timer(duration / steps, b -> {
                     long elapsed = System.currentTimeMillis() - startTime;
                     float progress = Math.min(1.0f, (float) elapsed / duration);
 

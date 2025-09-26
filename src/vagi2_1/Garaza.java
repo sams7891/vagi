@@ -7,7 +7,6 @@ import java.awt.Font;
 import java.awt.Image;
 import java.io.File;
 import java.util.ArrayList;
-
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
@@ -52,7 +51,7 @@ public class Garaza {
         iestatijumi.add(muzika);
 
         // Mūzikai
-        muzika.addActionListener(_ -> {
+        muzika.addActionListener(b -> {
             if (muzika.isSelected()) {
                 clip.loop(Clip.LOOP_CONTINUOUSLY);
                 clip.start();
@@ -69,7 +68,7 @@ public class Garaza {
         skana.setSelected(JBuilders.mute);
         iestatijumi.add(skana);
 
-        skana.addActionListener(_ -> {
+        skana.addActionListener(a -> {
             if (skana.isSelected()) {
                 JBuilders.mute = true;
             } else {
@@ -106,7 +105,7 @@ public class Garaza {
     	
         panel.add(Box.createVerticalStrut(50));
     	
-    	JLabel teksts = new JLabel("<html>Gustavam Lācim<br>Emīls Smirnovs<br>Intaram Voitkevičam<br>ChatGPT<br>Gemini<br>Disnep</html>");
+    	JLabel teksts = new JLabel("<html>Gustavam Lācim<br>Emīlam Smirnovam<br>Intaram Voitkevičam<br>ChatGPT<br>Gemini<br>Disney</html>");
     	teksts.setFont(new Font("Dialog", Font.BOLD, 25));
     	teksts.setForeground(Color.white);
     	panel.add(teksts);
@@ -124,8 +123,10 @@ public class Garaza {
     	
     	ArrayList<masina> visasMasinas = new ArrayList<>();
     	
+    	//Objekti
+    	
     	//pasAtrums marka modelis krāsa vārds ceļš uz bildi max ātrums
-    	masina fins = new masina(0, "GT", "1965Faultless", "Pēlēka", "Fins", "finn.png", 180);
+    	masina fins = new masina(0, "GT", "1965 Faultless", "Pēlēka", "Fins", "finn.png", 180);
     	visasMasinas.add(fins);
     	masina metrins = new masina(0, "Chevrolet", "1951 boom truck", "Brūns", "Metriņš", "mater.png", 90);
     	visasMasinas.add(metrins);
@@ -187,7 +188,7 @@ public class Garaza {
     	
     	JButton braukt = JBuilders.pSakumaMenu("Izbraukt");
     	braukt.setFont(new Font("Dialog", Font.BOLD, 20));
-    	braukt.addActionListener(_ -> izbraukt(visasMasinas.get(pasMas)));
+    	braukt.addActionListener(b -> izbraukt(visasMasinas.get(pasMas)));
     	
     	pBraukt.add(braukt, BorderLayout.CENTER);
     	info.add(pBraukt, BorderLayout.SOUTH);
@@ -208,7 +209,7 @@ public class Garaza {
     	JButton atpakal = JBuilders.pSakumaMenu("Atpakaļ");
     	atpakal.setFont(new Font("Dialog", Font.BOLD, 20));
     	
-    	atpakal.addActionListener(_ -> {
+    	atpakal.addActionListener(b -> {
     		if(pasMas > 0) {
     			mainaAtpakal();
     		}
@@ -221,7 +222,7 @@ public class Garaza {
     	
     	prieksu.setFont(new Font("Dialog", Font.BOLD, 20));
     	
-    	prieksu.addActionListener(_ -> {
+    	prieksu.addActionListener(b -> {
     	    if (pasMas < visasMasinas.size() - 1) {
     	        mainaPrieksu();
     	    }
@@ -349,21 +350,21 @@ public class Garaza {
         
         //Starts
         JButton pStarts = JBuilders.pSakumaMenu("  Starts             ");
-        pStarts.addActionListener(_ -> masinuIzv(index));
+        pStarts.addActionListener(b -> masinuIzv(index));
         poguPanels.add(pStarts);
 
         poguPanels.add(Box.createVerticalStrut(25));
         
         //Iestatijumi
         JButton pIestatijumi = JBuilders.pSakumaMenu("  Iestatījumi      ");
-        pIestatijumi.addActionListener(_ -> iestatijumi());
+        pIestatijumi.addActionListener(b -> iestatijumi());
         poguPanels.add(pIestatijumi);
 
         poguPanels.add(Box.createVerticalStrut(25));
         
         //Pateicibas
         JButton pPateiciba = JBuilders.pSakumaMenu("  Pateicibas      ");
-        pPateiciba.addActionListener(_ -> pateicibas());
+        pPateiciba.addActionListener(b -> pateicibas());
         poguPanels.add(pPateiciba);
         
         poguPanels.add(Box.createVerticalStrut(300));
